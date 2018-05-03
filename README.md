@@ -5,21 +5,12 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Rails 5.1.6
 
-* System dependencies
+* Dependencies.. see Gemfile
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # circle-sharing
+
+* Current functionality(subject to change):
+
+* User-Devise
