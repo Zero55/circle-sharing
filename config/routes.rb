@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   #resources for viewing users and posts, seperate from devise functionality
   resources :users, :controller => 'users'
 
+  #resources for posts
+  resources :posts, only: [:create, :destroy]
+
   devise_for :users, :path => 'u'
 
   root to: "static_pages#home"

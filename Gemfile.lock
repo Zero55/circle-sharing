@@ -50,6 +50,8 @@ GEM
       sass (>= 3.3.4)
     bootstrap-will_paginate (1.0.0)
       will_paginate
+    bootstrap-wysihtml5-rails (0.3.3.8)
+      railties (>= 3.0)
     builder (3.2.3)
     byebug (10.0.2)
     capybara (2.18.0)
@@ -202,6 +204,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (= 3.3.7)
   bootstrap-will_paginate (= 1.0.0)
+  bootstrap-wysihtml5-rails
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
