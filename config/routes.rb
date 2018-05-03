@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
   get '/contact', to: 'static_pages#contact'
 
-  devise_for :users
+  #resources for viewing users and posts, seperate from devise functionality
+  resources :users, :controller => 'users'
+
+  devise_for :users, :path => 'u'
 
   root to: "static_pages#home"
 
