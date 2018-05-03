@@ -2,6 +2,10 @@ class PostsController < ApplicationController
   before_action :user_signed_in? , only: [:create, :destroy]
   before_action :correct_user, only: [:destroy]
 
+  def index
+    @post = Post.new
+  end
+  
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
