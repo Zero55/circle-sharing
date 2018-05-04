@@ -10,6 +10,10 @@ end
 gem 'rails', '~> 5.1.6'
 # Use jQuery
 gem 'jquery-rails', '4.3.1'
+# Use carrierwave image uploader handler gem
+gem 'carrierwave', '~>1.0'
+# Use mini magick for carrierwave
+gem 'mini_magick', '~> 4.3'
 # Use tinyMCE wysiwyg editor gem
 gem 'tinymce-rails'
 # Use bootstrap gem
@@ -22,6 +26,8 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'sqlite3'
 # Use devise authentications
 gem 'devise'
+# fix for uploader generation
+gem 'net-ssh'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

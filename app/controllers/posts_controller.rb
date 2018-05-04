@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :user_signed_in? , only: [:create, :destroy]
   before_action :correct_user, only: [:destroy]
-
+  
   def index
     @post = Post.new
   end
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :picture)
+    params.require(:post).permit(:title, :content, :image)
   end
 
   def correct_user

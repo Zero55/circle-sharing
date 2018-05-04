@@ -1,9 +1,11 @@
 default:
   plugins:
     - autolink
-    - preview
     - image
     - link
+  paste_data_images: true
+  images_upload_base_path: '../app/assets/images'
+  images_upload_credentials: true
 
 alternate:
   selector: textarea.table-editor

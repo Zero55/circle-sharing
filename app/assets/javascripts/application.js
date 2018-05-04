@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require tinymce
+//= require basic_file_picker
 //= require_tree
 //= require jquery
 //= require bootstrap
