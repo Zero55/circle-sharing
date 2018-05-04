@@ -1,6 +1,11 @@
-<%= form_for(post) do |f| %>
+<%= form_for(@post) do |f| %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose a post.." %>
+    <%= f.label :title %>
+    <%= f.text_area :title, rows: 1 %>
+  </div>
+  <div class="text_field">
+    <%= f.text_area :content, placeholder: "Compose a post..", rows: 15, cols: 25, :class => "tinymce" %>
 </div>
 <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
+<%= tinymce %>

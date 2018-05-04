@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.1.6'
 # Use jQuery
 gem 'jquery-rails', '4.3.1'
+# Use tinyMCE wysiwyg editor gem
+gem 'tinymce-rails'
 # Use bootstrap gem
 gem 'bootstrap-sass', '3.3.7'
 # Use paginate for posts

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :users
 
   #resources for posts
-  resources :posts, only: [:create, :destroy]
+  resources :posts, only: [:index, :create, :destroy]
 
 
 

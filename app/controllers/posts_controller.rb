@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
   end
-  
+
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:content, :picture)
+    params.require(:post).permit(:title, :content, :picture)
   end
 
   def correct_user
