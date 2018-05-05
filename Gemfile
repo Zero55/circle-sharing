@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
+gem 'rails', '~> 5.2.0'
 # Use jQuery
 gem 'jquery-rails', '4.3.1'
 # Use carrierwave image uploader handler gem
