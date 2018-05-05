@@ -1,0 +1,15 @@
+<%= link_to 'Back to feed', posts_path, class: 'btn btn-default'%>
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>
+      <%= @post.title %>
+    </h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= raw @post.content %>
+  </div>
+</div>

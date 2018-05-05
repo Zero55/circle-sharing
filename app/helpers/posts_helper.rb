@@ -1,2 +1,5 @@
 module PostsHelper
+  def empty_posts(posts)
+    'Hmm... seems like there are no posts on your feed' if posts.blank?
+  end
 end
