@@ -16,3 +16,6 @@ AllCops:
     - 'Gemfile.lock'
     - 'Rakefile'
     - 'config.ru'
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
