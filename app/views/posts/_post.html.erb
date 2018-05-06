@@ -1,9 +1,9 @@
 <div class="row post">
-  <div class="col-md-6 text-left">
-    <%= post.user.full_name %>
-    <%= time_ago_in_words(post.created_at) %>
+  <div class="col-md-6 text-left info">
+    <h4><%= post.user.full_name %></h4>
+    <sub>posted <%= time_ago_in_words(post.created_at) %></sub>
   </div>
   <div class="col-md-6 text-right status">
-    Opened
+    <%= link_to post.opened, post_path(post), class: post_seen_class(post) %>
   </div>
 </div>
