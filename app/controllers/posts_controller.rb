@@ -1,36 +1,50 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  before_action :user_signed_in? , only: [:create, :destroy]
+  before_action :user_signed_in?, only: [:create, :destroy]
   before_action :correct_user, only: [:destroy]
-  
+
   def index
+    @posts = Post.all
+  end
+
+  def show
+    @post = Post.find params[:id]
+  end
+
+  def new
     @post = Post.new
   end
 
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = "Post created!"
-      redirect_to root_url
+      flash[:success] = 'Post created!'
+      redirect_to posts_path
     else
-      @feed_items = []
-      render 'static_pages/home'
+      flash[:error] = 'Post failed to save'
+      redirect_to new_post_path
     end
   end
 
   def destroy
-    @post.destroy
-    flash[:success] = "Post deleted"
-    redirect_to request.referrer || root_url
+    if @post.destroy
+      flash[:success] = 'Post deleted'
+      redirect_to posts_path
+    else
+      flash[:error] = 'There was an error deleting your post'
+      redirect_to posts_path
+    end
   end
 
   private
-  def post_params
-    params.require(:post).permit(:title, :content, :image)
-  end
 
-  def correct_user
-    @post = current_user.posts.find_by(id: params[:id])
-    redirect_to root_url if @post.nil?
-  end
+    def post_params
+      params.require(:post).permit(:title, :content, :image)
+    end
 
+    def correct_user
+      @post = current_user.posts.find_by(id: params[:id])
+      redirect_to posts_path if @post.nil?
+    end
 end

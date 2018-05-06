@@ -1,20 +1,20 @@
 Rails.application.routes.draw do
 
-  get '/help', to: 'static_pages#help'
+  get '/help', to: 'home#help'
 
-  get '/about', to: 'static_pages#about'
+  get '/about', to: 'home#about'
 
-  get '/contact', to: 'static_pages#contact'
+  get '/contact', to: 'home#contact'
   #reroute devise routes
   devise_for :users
   #resources for viewing users and posts, seperate from devise functionality
   resources :users
 
   #resources for posts
-  resources :posts, only: [:index, :create, :destroy]
+  resources :posts
 
 
 
-  root to: "static_pages#home"
+  root to: "home#index"
 
 end

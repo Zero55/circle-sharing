@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
+gem 'rails', '~> 5.2.0'
 # Use jQuery
 gem 'jquery-rails', '4.3.1'
 # Use carrierwave image uploader handler gem
@@ -51,6 +51,11 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+#ruby linter
+gem 'rubocop'
+gem 'rubocop-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
