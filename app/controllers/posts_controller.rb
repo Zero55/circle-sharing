@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_action :user_signed_in?, only: [:create, :destroy]
   before_action :correct_user, only: [:destroy]
 
+
   def index
     @posts = Post.all
   end
@@ -22,7 +23,7 @@ class PostsController < ApplicationController
       flash[:success] = 'Post created!'
       redirect_to posts_path
     else
-      flash[:error] = 'Post failed to save'
+      flash[:error] = @post.errors.messages
       redirect_to new_post_path
     end
   end

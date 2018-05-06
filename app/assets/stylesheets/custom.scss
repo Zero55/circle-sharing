@@ -1,5 +1,5 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 $gray-medium-light: #eaeaea;
 
@@ -11,7 +11,10 @@ $gray-medium-light: #eaeaea;
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
+input,
+textarea,
+select,
+.uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
@@ -95,7 +98,7 @@ textarea#post_title {
     display: block;
     margin-left: 60px;
   }
-  }
+}
 aside {
   textarea {
     height: 100px;
@@ -127,13 +130,18 @@ textarea {
 .center {
   text-align: center;
   h1 {
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
   }
 }
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1;
 }
 
@@ -157,7 +165,6 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
-
 
 /* header */
 
@@ -212,4 +219,8 @@ footer {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+
+h4 {
+  margin: 0px;
 }
