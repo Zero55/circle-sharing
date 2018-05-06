@@ -1,11 +1,16 @@
 <%= form_for(@post) do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <div class="field">
     <%= f.label :title %>
     <%= f.text_area :title, rows: 1 %>
   </div>
   <div class="text_field">
     <%= f.text_area :content, placeholder: 'Compose a post..', rows: 15, cols: 25, :class => 'tinymce' %>
-</div>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :image %>
+  </div>
+
 <%= f.submit 'Post', class: 'btn btn-primary' %>
 <% end %>
 <%= tinymce %>
