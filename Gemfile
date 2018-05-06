@@ -10,10 +10,6 @@ end
 gem 'rails', '~> 5.2.0'
 # Use jQuery
 gem 'jquery-rails', '4.3.1'
-# Use carrierwave image uploader handler gem
-gem 'carrierwave', '~>1.0'
-# Use mini magick for carrierwave
-gem 'mini_magick', '~> 4.3'
 # Use tinyMCE wysiwyg editor gem
 gem 'tinymce-rails'
 # Use bootstrap gem
