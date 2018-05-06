@@ -1,9 +1,9 @@
-<div class="well">
-    <span class="user"><%= link_to post.user.full_name %></span>
-    <h2 class="text-left"><%= post.title %></h2>
-    <p><%= raw post.content %></p>
-    <%= link_to 'See full post', post_path(post), class: 'btn btn-success' %>
-    <div class="timestamp">
-      Posted <%= time_ago_in_words(post.created_at) %> ago.
-    </div>
+<div class="row post">
+  <div class="col-md-6 text-left info">
+    <h4><%= post.user.full_name %></h4>
+    <sub>posted <%= time_ago_in_words(post.created_at) %></sub>
+  </div>
+  <div class="col-md-6 text-right status">
+    <%= link_to post.opened, post_path(post), class: post_seen_class(post) %>
+  </div>
 </div>
