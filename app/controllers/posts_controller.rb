@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :user_signed_in?, only: [:create, :destroy]
+  before_action :authenticate_user!
   before_action :correct_user, only: [:destroy]
 
 
