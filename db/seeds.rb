@@ -15,8 +15,8 @@ user2 = User.new(
       :password              => "Password2134",
       :password_confirmation => "Password2134"
   )
-  user.skip_confirmation!
-  user.save!
+  user2.skip_confirmation!
+  user2.save!
 
 user3 = User.new(
       :first_name            => "Michael",
@@ -25,8 +25,8 @@ user3 = User.new(
       :password              => "Password2134",
       :password_confirmation => "Password2134"
   )
-  user.skip_confirmation!
-  user.save!
+  user3.skip_confirmation!
+  user3.save!
 
 user4 = User.new(
       :first_name            => "Lauren",
@@ -35,8 +35,8 @@ user4 = User.new(
       :password              => "Password2134",
       :password_confirmation => "Password2134"
   )
-  user.skip_confirmation!
-  user.save!
+  user4.skip_confirmation!
+  user4.save!
 
 user5 = User.new(
       :first_name            => "Vanessa",
@@ -45,5 +45,5 @@ user5 = User.new(
       :password              => "Password2134",
       :password_confirmation => "Password2134"
   )
-  user.skip_confirmation!
-  user.save!
+  user5.skip_confirmation!
+  user5.save!
