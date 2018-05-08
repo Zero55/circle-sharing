@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   #reroute devise routes
   devise_for :users
   #resources for viewing users and posts, seperate from devise functionality
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   #resources for posts
   resources :posts

@@ -7,6 +7,9 @@
         <%= @user.first_name %>
         <%= @user.last_name%>
       </h1>
+      <section class="stats col-xs-6">
+        <%= render 'relationships/followstats' %>
+      </section>
     </section>
   </aside>
   <div class="col-md-8">
