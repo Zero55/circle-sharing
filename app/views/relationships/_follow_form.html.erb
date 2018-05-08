@@ -3,7 +3,7 @@
   <% if current_user.following?(@user) %>
     <%= render 'relationships/follow' %>
   <% else %>
-
+    <%= render 'relationships/unfollow' %>
   <% end %>
   </div>
 <% end %>
