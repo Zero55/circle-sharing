@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
 
   get '/contact', to: 'home#contact'
-  #reroute devise routes
+
   devise_for :users
   #resources for viewing users and posts, seperate from devise functionality
   resources :users do
@@ -13,12 +13,9 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-
-  #resources for posts
   resources :posts
-
-
-
+  resources :relationships, only: [:create, :destroy]
+  
   root to: "home#index"
 
 end
