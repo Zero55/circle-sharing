@@ -9,7 +9,9 @@ class Post < ApplicationRecord
   has_one_attached :image
   before_create :add_expire_date
 
-
+  def share_post
+    #
+  end
   def expired?
     Time.now >= self.expire ? true : false
   end
@@ -23,7 +25,6 @@ class Post < ApplicationRecord
   end
 
   private
-
     def add_expire_date
       self.expire = self.created_at + 48.hours
     end
