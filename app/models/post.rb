@@ -5,17 +5,14 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
   validates :title, presence: true
   validates :content, presence: true, length: { maximum: 142 }
-
   validates :image, attached_file: true
-  # validates :image_presence
-
   has_one_attached :image
+  before_create :add_expire_date
 
-  # def self.image_presence
-  #   if image.attached?
-  #     errors.add('image is not her ')
-  #   end
-  # end
+
+  def expired?
+    Time.now >= self.expire ? true : false
+  end
 
   def opened
     'Opened'
@@ -24,4 +21,10 @@ class Post < ApplicationRecord
   def seen?
     true
   end
+
+  private
+
+    def add_expire_date
+      self.expire = self.created_at + 48.hours
+    end
 end
