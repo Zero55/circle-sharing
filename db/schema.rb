@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_05_10_170001) do
     t.integer "post_id"
     t.integer "user_id"
     t.integer "pushed_num"
+    t.integer "delete_num"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
