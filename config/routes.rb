@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   end
   resources :posts
   resources :relationships, only: [:create, :destroy]
-  
+
+  resources :pushed_posts, only: [:create]
+
   root to: "home#index"
 
 end

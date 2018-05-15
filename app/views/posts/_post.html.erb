@@ -22,10 +22,7 @@
   <div class="post-bot">
     <div class="row">
       <div class="col-xs-6 btn btn-success">
-        <%= link_to "Push Post", push_post_path(id: post_id) %>
-      </div>
-      <div class="col-xs-6 btn btn-danger">
-        <%= link_to "Delete Post", delete_push_post_path(id: post_id) %>
+        <%= link_to "Push Post", pushed_posts_path(post_id: post.id), method: 'POST' %>
       </div>
     </div>
   </div>
