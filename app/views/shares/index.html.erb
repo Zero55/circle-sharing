@@ -1,0 +1,17 @@
+<h1>Feed</h1>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <%= link_to 'Add a new post', new_post_path, class: 'btn btn-primary' %>
+  </div>
+
+  <div class="col-md-12">
+      <h2><%= empty_posts(@shares) %></h2>
+  </div>
+
+  <% @shares.each do |share| %>
+    <div class="col-md-12">
+      <%= render share.post %>
+    </div>
+  <% end %>
+</div>

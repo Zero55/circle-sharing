@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :following, through: :active_circles,  source: :followed
   has_many :followers, through: :passive_circles, source: :follower
   has_many :shares
+  has_many :peeps
 
   def follow(other_user)
     following << other_user

@@ -16,7 +16,12 @@ Rails.application.routes.draw do
   resources :posts
   resources :circles, only: [:create, :destroy]
 
-  resources :pushed_posts, only: [:create]
+  resources :shares, only: [:create]
+
+  authenticated :user do
+    root to: "shares#index", as: :shares_index
+  end
+  
 
   root to: "home#index"
 
