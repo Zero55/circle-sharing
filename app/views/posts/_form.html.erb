@@ -1,4 +1,4 @@
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, remote: true) do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <div class="field">
     <%= f.label :title %>
@@ -7,10 +7,13 @@
   <div class="text_field">
     <%= f.text_area :content, placeholder: 'Compose a post..', rows: 15, cols: 25, :class => 'tinymce' %>
   </div>
-  <div class="form-group">
-    <%= f.file_field :image %>
+  <!-- STYLE THIS -->
+  <div>
+    <img id="output"/>
   </div>
-  
+  <div class="form-group">
+    <%= f.file_field :image, :onchange => "loadFile(event)" %>
+  </div>
   <%= f.submit 'Post', class: 'btn btn-primary' %>
 <% end %>
 <%= tinymce %>
