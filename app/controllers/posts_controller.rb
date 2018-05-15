@@ -22,9 +22,7 @@ class PostsController < ApplicationController
       flash[:success] = 'Post created!'
       redirect_to posts_path
     else
-      byebug
-      @post_errors = @post.errors.map { |key, value| "#{key} - #{value}" }
-      flash[:error] = @post_errors
+      flash[:error] = @post.errors.full_messages
       redirect_to new_post_path
     end
   end
