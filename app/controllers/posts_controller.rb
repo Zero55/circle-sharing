@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       flash[:success] = 'Post created!'
       redirect_to posts_path
     else
-      flash[:error] = @post.errors.messages
+      flash[:error] = @post.errors.full_messages
       redirect_to new_post_path
     end
   end

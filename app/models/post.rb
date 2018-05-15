@@ -17,8 +17,8 @@ class Post < ApplicationRecord
   end
 
   def push_post(user)
-    post = Post.find(self.post.id)
-    pushed_post = PushedPost.create(:user_id => user.id, :post_id => post.id)
+    post_id = Post.id
+    pushed_post = PushedPost.create(:user_id => current_user.id, :post_id => post_id)
   end
 
   def self.following_pushed_posts(user)
