@@ -7,15 +7,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
   has_many :posts, dependent: :destroy
-  has_many :active_relationships, class_name: 'Relationship',
+  has_many :active_circles, class_name: 'Circle',
                                   foreign_key: 'follower_id',
                                   dependent:   :destroy
-  has_many :passive_relationships, class_name: 'Relationship',
+  has_many :passive_circles, class_name: 'Circle',
                                    foreign_key: 'followed_id',
                                    dependent:  :destroy
-  has_many :following, through: :active_relationships,  source: :followed
-  has_many :followers, through: :passive_relationships, source: :follower
-  has_many :pushed_posts
+  has_many :following, through: :active_circles,  source: :followed
+  has_many :followers, through: :passive_circles, source: :follower
+  has_many :shares
 
   def follow(other_user)
     following << other_user

@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 2018_05_10_170001) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "circles", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_circles_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_circles_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_circles_on_follower_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -45,23 +55,13 @@ ActiveRecord::Schema.define(version: 2018_05_10_170001) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-  create_table "pushed_posts", force: :cascade do |t|
+  create_table "shares", force: :cascade do |t|
     t.integer "post_id"
     t.integer "user_id"
     t.integer "pushed_num"
     t.integer "delete_num"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "relationships", force: :cascade do |t|
-    t.integer "follower_id"
-    t.integer "followed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["followed_id"], name: "index_relationships_on_followed_id"
-    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
-    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -18,7 +18,7 @@ class Post < ApplicationRecord
 
   def push_post(user)
     post = Post.find(self.post.id)
-    pushed_post = PushedPost.create(:user_id => user.id, :post_id => post.id)
+    pushed_post = Circle.create(:user_id => user.id, :post_id => post.id)
   end
 
   def self.following_pushed_posts(user)

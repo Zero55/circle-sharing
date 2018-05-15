@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
   resources :posts
-  resources :relationships, only: [:create, :destroy]
+  resources :circles, only: [:create, :destroy]
 
   resources :pushed_posts, only: [:create]
 

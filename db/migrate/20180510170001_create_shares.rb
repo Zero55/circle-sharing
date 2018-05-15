@@ -1,6 +1,6 @@
-class CreatePushedPosts < ActiveRecord::Migration[5.2]
+class CreateShares < ActiveRecord::Migration[5.2]
   def change
-    create_table :pushed_posts do |t|
+    create_table :shares do |t|
       t.integer :post_id
       t.integer :user_id
       t.integer :pushed_num

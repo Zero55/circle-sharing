@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class PushedPostsController < ApplicationController
+class CirclesController < ApplicationController
   before_action :find_post, only: [:push_post]
 
   def create
     post = Post.find(params[:post_id])
-    pushed_post = PushedPost.new(user_id: current_user.id, post_id: post.id)
+    pushed_post = Circle.new(user_id: current_user.id, post_id: post.id)
 
     if pushed_post.save
       flash[:notice] = 'Successfully pushed post'

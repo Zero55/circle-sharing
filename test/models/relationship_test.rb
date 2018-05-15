@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class RelationshipTest < ActiveSupport::TestCase
+class CircleTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

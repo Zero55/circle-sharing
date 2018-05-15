@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RelationshipsController < ApplicationController
+class CirclesController < ApplicationController
   before_action :authenticate_user!
 
   def create
@@ -10,7 +10,7 @@ class RelationshipsController < ApplicationController
   end
 
   def destroy
-    user = Relationship.find(params[:id]).followed
+    user = Circle.find(params[:id]).followed
     current_user.unfollow(user)
     redirect_to user
   end
