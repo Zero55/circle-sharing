@@ -1,9 +1,29 @@
-<div class="row post">
-  <div class="col-md-6 text-left info">
-    <h4><%= post.user.full_name %></h4>
-    <sub>posted <%= time_ago_in_words(post.created_at) %></sub>
+<div class="container">
+  <div class="post-top">
+    <div class="row">
+      <div class="col-xs-4 text-left info">
+        <h4><%= post.user.full_name %></h4>
+        <sub>posted <%= time_ago_in_words(post.created_at) %></sub>
+      </div>
+      <div class="col-xs-4 text-center">
+        <h4><%= post.title %></h4>
+      </div>
+      <div class="col-xs-4 text-right status">
+        <%= link_to post.opened, post_path(post), class: post_seen_class(post) %>
+      </div>
+    </div>
   </div>
-  <div class="col-md-6 text-right status">
-    <%= link_to post.opened, post_path(post), class: post_seen_class(post) %>
+  <div class="post-content text-center">
+    <%= post.content %>
+  </div>
+  <div class="post-img">
+      <%= image_tag post.image %>
+  </div>
+  <div class="post-bot">
+    <div class="row">
+      <div class="col-xs-6 btn btn-success">
+        <%= link_to "Push Post", pushed_posts_path(post_id: post.id), method: 'POST' %>
+      </div>
+    </div>
   </div>
 </div>

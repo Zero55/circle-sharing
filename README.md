@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* Rails 5.1.6
+* Rails 5.2
 
 * Dependencies.. see Gemfile
 

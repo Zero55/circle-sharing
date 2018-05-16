@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :user_signed_in?, only: [:create, :destroy]
+  before_action :authenticate_user!
   before_action :correct_user, only: [:destroy]
-
 
   def index
     @posts = Post.all
@@ -23,7 +22,7 @@ class PostsController < ApplicationController
       flash[:success] = 'Post created!'
       redirect_to posts_path
     else
-      flash[:error] = @post.errors.messages
+      flash[:error] = @post.errors.full_messages
       redirect_to new_post_path
     end
   end
@@ -41,7 +40,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :content, :image, :user_id)
+      params.require(:post).permit(:title, :content, :image, :user_id, :expire)
     end
 
     def correct_user
