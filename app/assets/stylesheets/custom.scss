@@ -10,6 +10,11 @@ $gray-medium-light: #eaeaea;
 }
 
 /* feed */
+
+.container-posts{
+  padding-right: 220px;
+  padding-left: 100px;
+}
 .post-top {
   display: flex;
   flex-direction: column;
@@ -128,11 +133,7 @@ textarea {
 
 .center {
   text-align: center;
-  h1 {
-    // margin-bottom: 10px;
-  }
 }
-
 /* typography */
 
 h1,

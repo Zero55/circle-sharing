@@ -1,16 +1,27 @@
-<%= link_to 'Back to feed', shares_path, class: 'btn btn-default'%>
-
-<div class="row">
-  <div class="col-md-12">
-    <h1>
-      <%= @post.title %>
-    </h1>
+<div class="container container-posts">
+  <div class="post-top">
+    <div class="row">
+      <div class="col-xs-4 text-left info">
+        <h4><%= @post.user.full_name %></h4>
+        <sub>posted <%= time_ago_in_words(@post.created_at) %></sub>
+      </div>
+      <div class="col-xs-4 text-center">
+        <h4><%= @post.title %></h4>
+      </div>
+      <div class="col-xs-4 text-right">
+        <%= link_to 'Back to feed', shares_path, class: 'btn btn-default'%> 
+      </div>
+    </div>
+ 
+  </div>
+  <div class="post-content text-center">
+    <%=raw @post.content %>
+  </div>
+  <div class="post-img">
+      <%= image_tag @post.image %>
+  </div>
+  <div class="post-bot">
+    <!-- Buttons maybe -->
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <%= image_tag @post.image, class: 'img-post' %>
-    <%= raw @post.content %>
-  </div>
-</div>
