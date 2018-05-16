@@ -18,12 +18,13 @@ class User < ApplicationRecord
   has_many :shares
   has_many :peeps
 
+  
   def follow(other_user)
-    following << other_user
+    active_circles.create(followed_id: other_user.id)
   end
 
   def unfollow(other_user)
-    following.delete(other_user)
+    active_circles.find_by(followed_id: other_user.id).destroy
   end
 
   def following?(other_user)

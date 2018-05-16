@@ -13,9 +13,10 @@ class Post < ApplicationRecord
   has_one_attached :image
 
   #callbacks
-  before_create :add_expire_date
+  # before_create :add_expire_date
 
   after_create :share_post
+
 
   def share_post
     Share.create( user_id: user_id, post_id: id )
