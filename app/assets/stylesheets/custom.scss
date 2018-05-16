@@ -9,6 +9,52 @@ $gray-medium-light: #eaeaea;
   box-sizing: border-box;
 }
 
+/* feed */
+
+.container-posts{
+  padding-right: 220px;
+  padding-left: 100px;
+}
+.post-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 100px 20px 100px;
+}
+
+img {
+  display: block;
+  object-fit: contain;
+  max-width: 800px;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+}
+.post-container {
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+  height: 850px;
+  width: 600px;
+}
+.post-img {
+  display: flex;
+  justify-content: center;
+  padding: 20px 100px 20px 100px;
+}
+.post-content {
+  display: flex;
+  justify-content: center;
+  padding: 20px 100px 20px 100px;
+  outline: 1px grey;
+}
+.post-bot {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 100px 50px 100px;
+}
+
 /* forms */
 
 input,
@@ -63,48 +109,6 @@ input {
   margin-top: 45px;
   @include box_sizing;
 }
-/* Posts */
-
-textarea#post_title {
-  resize: none;
-}
-.posts {
-  list-style: none;
-  padding: 0;
-  .field {
-    height: 25px;
-  }
-  h3 {
-    align: left;
-  }
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .content {
-    display: block;
-    margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
-  }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-    margin-left: 60px;
-  }
-}
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
 
 span.picture {
   margin-top: 10px;
@@ -129,11 +133,7 @@ textarea {
 
 .center {
   text-align: center;
-  h1 {
-    // margin-bottom: 10px;
-  }
 }
-
 /* typography */
 
 h1,

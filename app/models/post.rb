@@ -2,26 +2,29 @@
 
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :shares
+
+  #validations
   validates :user_id, presence: true
   validates :title, presence: true
   validates :content, presence: true, length: { maximum: 142 }
-
-  validates :image, attached_file: true
-  # validates :image_presence
+  #validates :image, attached_file: true
 
   has_one_attached :image
 
-  # def self.image_presence
-  #   if image.attached?
-  #     errors.add('image is not her ')
-  #   end
-  # end
+  #callbacks
+  # before_create :add_expire_date
 
-  def opened
-    'Opened'
+  after_create :share_post
+
+
+  def share_post
+    Share.create( user_id: user_id, post_id: id )
   end
 
-  def seen?
-    true
+  def self.following_posts(user)
+    following_ids = user.following.pluck(:id)
+    posts = Post.all.where(user_id: following_ids)
+    return posts
   end
 end
